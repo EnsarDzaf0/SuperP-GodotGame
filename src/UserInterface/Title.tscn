@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/font_igrice.tres" type="DynamicFont" id=1]
+
+[node name="Title" type="Label"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -61.5
+margin_top = 81.0
+margin_right = 61.5
+margin_bottom = 115.0
+rect_scale = Vector2( 1.66409, 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "Super P"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Background.png" type="Texture" id=1]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=5]
+
+[sub_resource type="Theme" id=1]
+
+[node name="MainScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Title" parent="." instance=ExtResource( 2 )]
+margin_left = -107.0
+margin_top = 68.0
+margin_right = 22.0
+margin_bottom = 102.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+uppercase = true
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -86.0
+margin_top = -86.0
+margin_right = 86.0
+margin_bottom = 86.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" parent="Menu" instance=ExtResource( 3 )]
+next_scene_path = "res://src/Leveli/Level1.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 4 )]
+theme = SubResource( 1 )
