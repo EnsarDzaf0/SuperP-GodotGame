@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
 [ext_resource path="res://src/Actor/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Actor/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=8]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -394,9 +397,22 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 15/z_index = 0
 
-[node name="LevelTest" type="Node2D"]
+[node name="Level2" type="Node2D"]
 __meta__ = {
 "_edit_vertical_guides_": [ 2880.0, 3071.0 ]
+}
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="UserInterface2" type="Control" parent="UserInterface" instance=ExtResource( 9 )]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 10 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
